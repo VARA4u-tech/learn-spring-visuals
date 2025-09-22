@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +69,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'primary-gradient': 'var(--primary-gradient)',
+        'secondary-gradient': 'var(--secondary-gradient)',
+      },
+      backgroundColor: {
+        'code': 'hsl(var(--code-bg))',
+      },
+      borderColor: {
+        'code': 'hsl(var(--code-border))',
+      },
+      textColor: {
+        'syntax-keyword': 'hsl(var(--syntax-keyword))',
+        'syntax-string': 'hsl(var(--syntax-string))',
+        'syntax-comment': 'hsl(var(--syntax-comment))',
+        'syntax-number': 'hsl(var(--syntax-number))',
       },
       borderRadius: {
         lg: "var(--radius)",
