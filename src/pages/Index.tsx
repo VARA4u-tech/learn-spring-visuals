@@ -195,37 +195,37 @@ public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary-gradient">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="relative container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-6">
-              <Badge className="bg-white/20 text-white border-white/30">
+        <div className="relative container mx-auto px-4 py-12 sm:py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-white space-y-4 sm:space-y-6 text-center lg:text-left">
+              <Badge className="bg-white/20 text-white border-white/30 w-fit mx-auto lg:mx-0">
                 <Code className="w-4 h-4 mr-2" />
                 Educational Demo
               </Badge>
-              <h1 className="text-5xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                 Master RESTful APIs with 
                 <span className="text-accent"> Spring Boot</span>
               </h1>
-              <p className="text-xl text-white/90 leading-relaxed">
+              <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Learn REST API concepts through interactive examples, complete with React frontend 
                 and Spring Boot backend code explanations.
               </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto">
                   <Book className="w-5 h-5 mr-2" />
                   Start Learning
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 w-full sm:w-auto">
                   <Users className="w-5 h-5 mr-2" />
                   Teach Friends
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative order-first lg:order-last">
               <img 
                 src={heroImage} 
                 alt="REST API Visualization" 
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:max-w-none"
               />
             </div>
           </div>
@@ -233,16 +233,16 @@ public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
       </section>
 
       {/* REST Methods Overview */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-12 sm:py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">HTTP Methods Explained</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">HTTP Methods Explained</h2>
+            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
               Understanding the four fundamental HTTP methods used in RESTful API design
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { method: "GET", description: "Retrieve data", icon: Database, color: "success" },
               { method: "POST", description: "Create new data", icon: Plus, color: "info" },
@@ -250,12 +250,12 @@ public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
               { method: "DELETE", description: "Remove data", icon: Trash, color: "destructive" }
             ].map(({ method, description, icon: Icon, color }, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className={`w-12 h-12 mx-auto rounded-full bg-${color}/20 flex items-center justify-center mb-3`}>
-                    <Icon className={`w-6 h-6 text-${color}`} />
+                <CardHeader className="pb-4 sm:pb-6">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-full bg-${color}/20 flex items-center justify-center mb-3`}>
+                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 text-${color}`} />
                   </div>
-                  <CardTitle className="text-lg">{method}</CardTitle>
-                  <CardDescription>{description}</CardDescription>
+                  <CardTitle className="text-base sm:text-lg">{method}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -264,16 +264,16 @@ public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
       </section>
 
       {/* Interactive API Demos */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Interactive API Examples</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Interactive API Examples</h2>
+            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
               Try out each HTTP method with live code examples and detailed explanations
             </p>
           </div>
           
-          <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
             {apiExamples.map((example, index) => (
               <ApiMethodDemo key={index} {...example} />
             ))}
@@ -282,14 +282,14 @@ public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-primary-gradient">
+      <section className="py-12 sm:py-16 bg-primary-gradient">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto text-white space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Build Your Own API?</h2>
-            <p className="text-xl text-white/90">
+          <div className="max-w-2xl mx-auto text-white space-y-4 sm:space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-bold">Ready to Build Your Own API?</h2>
+            <p className="text-lg sm:text-xl text-white/90">
               Now that you understand REST concepts, start building your own Spring Boot application!
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto">
               <Globe className="w-5 h-5 mr-2" />
               Explore More Examples
             </Button>

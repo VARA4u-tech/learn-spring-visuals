@@ -42,13 +42,13 @@ export function ApiMethodDemo({
   return (
     <Card className="w-full">
       <CardHeader>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <Badge className={methodColors[method]} variant="outline">
             {method}
           </Badge>
-          <div>
-            <CardTitle className="text-lg">{endpoint}</CardTitle>
-            <CardDescription>{description}</CardDescription>
+          <div className="min-w-0 flex-1">
+            <CardTitle className="text-base sm:text-lg break-all">{endpoint}</CardTitle>
+            <CardDescription className="text-sm sm:text-base">{description}</CardDescription>
           </div>
         </div>
       </CardHeader>
@@ -78,11 +78,12 @@ export function ApiMethodDemo({
 
         {/* Code Tabs */}
         <div>
-          <div className="flex space-x-1 mb-4">
+          <div className="flex flex-col xs:flex-row space-y-2 xs:space-y-0 xs:space-x-1 mb-4">
             <Button
               variant={activeTab === "frontend" ? "default" : "secondary"}
               size="sm"
               onClick={() => setActiveTab("frontend")}
+              className="w-full xs:w-auto text-xs sm:text-sm"
             >
               React Frontend
             </Button>
@@ -90,6 +91,7 @@ export function ApiMethodDemo({
               variant={activeTab === "backend" ? "default" : "secondary"}
               size="sm"
               onClick={() => setActiveTab("backend")}
+              className="w-full xs:w-auto text-xs sm:text-sm"
             >
               Spring Boot Backend
             </Button>
@@ -103,18 +105,18 @@ export function ApiMethodDemo({
         </div>
 
         {/* Line by Line Explanation */}
-        <div className="bg-secondary/30 rounded-lg p-4">
-          <h4 className="font-semibold mb-3 flex items-center gap-2">
-            <ArrowRight className="w-4 h-4" />
+        <div className="bg-secondary/30 rounded-lg p-3 sm:p-4">
+          <h4 className="font-semibold mb-3 flex items-center gap-2 text-sm sm:text-base">
+            <ArrowRight className="w-4 h-4 flex-shrink-0" />
             Code Explanation
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 sm:space-y-3">
             {explanation.map((line, index) => (
-              <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
-                <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded font-mono min-w-fit">
+              <li key={index} className="text-xs sm:text-sm text-muted-foreground flex items-start gap-2 sm:gap-3">
+                <span className="bg-primary/20 text-primary text-xs px-1.5 sm:px-2 py-1 rounded font-mono min-w-fit flex-shrink-0">
                   {index + 1}
                 </span>
-                {line}
+                <span className="break-words">{line}</span>
               </li>
             ))}
           </ul>
